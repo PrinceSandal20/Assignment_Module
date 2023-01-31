@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 
 class HomeScreen extends StatelessWidget {
   static const String description =
-      "This is the description with no context. This is Popup which can be appears when show more is clicked.";
+      "The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra.";
 
   // final String description =
   //     "This is the description with no context. This is Popup which can be appears when show more is clicked.";
@@ -29,11 +29,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shadowColor: Colors.black,
+        backgroundColor: Colors.green,
         title: const Center(
           child: Text(
-            "Text Popup",
-            //style: TextStyle(color: Colors.white),
+            "Popup",
           ),
         ),
       ),
@@ -43,14 +42,15 @@ class HomeScreen extends StatelessWidget {
             image: DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(
-                'https://www.kindacode.com/wp-content/uploads/2021/01/blue.jpg',
+                'https://www.planetware.com/wpimages/2020/01/india-in-pictures-beautiful-places-to-photograph-taj-mahal.jpg',
               ),
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(25),
+            padding: EdgeInsets.all(60),
             child: Column(
-              children: [
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
                 DescriptionTextWidget(
                   text: description,
                 ),
@@ -99,7 +99,7 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
           ? Text(firstHalf)
           : Row(
               children: <Widget>[
-                Text(firstHalf + " "),
+                //Text(firstHalf + " "),
                 InkWell(
                   key: const Key("show_more_ink_well"),
                   child: Row(
@@ -107,9 +107,9 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       Text(
-                        "Information",
+                        "Taj Mahal",
                         key: key,
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.black),
                       ),
                     ],
                   ),
@@ -126,9 +126,9 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
     ShowMoreTextPopup popup = ShowMoreTextPopup(context,
         text: text,
         textStyle: const TextStyle(color: Colors.black),
-        height: 200,
+        height: 100,
         width: 100,
-        backgroundColor: const Color(0xFF16CCCC),
+        backgroundColor: Color.fromARGB(255, 137, 205, 187),
         padding: const EdgeInsets.all(4.0),
         borderRadius: BorderRadius.circular(10.0), onDismiss: () {
       ScaffoldMessenger.of(context)
