@@ -48,11 +48,30 @@ class HomeScreen extends StatelessWidget {
           ),
           child: Padding(
             padding: EdgeInsets.all(60),
-            child: Column(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                DescriptionTextWidget(
-                  text: description,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    DescriptionTextWidget(
+                      text: description,
+                    ),
+                    DescriptionTextWidget(
+                      text: description,
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    DescriptionTextWidget(
+                      text: description,
+                    ),
+                    DescriptionTextWidget(
+                      text: description,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -125,7 +144,7 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
   void showMoreText(String text) {
     ShowMoreTextPopup popup = ShowMoreTextPopup(context,
         text: text,
-        textStyle: const TextStyle(color: Colors.black),
+        textStyle: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         height: 100,
         width: 100,
         backgroundColor: Color.fromARGB(255, 137, 205, 187),
