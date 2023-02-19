@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:show_more_text_popup/show_more_text_popup.dart';
+import 'package:test_app/upi.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Show more text',
-      home: HomeScreen(),
+      home: MyUPI(),
     );
   }
 }
